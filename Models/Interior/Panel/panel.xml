@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+    <object-name>panel2</object-name>
+    <object-name>panel3</object-name>
+    <object-name>panel4</object-name>
+    
+    <!-- Objets transparents -->
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>panel</object-name>
+    <object-name>panel4</object-name>
+    <condition>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/panel-dim</factor-prop>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  0.8 </blue>
+    </emission>
+  </animation>
+  
+  <!-- PEDESTAL -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Pedestal/pedestal.xml</path>
+    <offsets>
+      <x-m>  0.03825 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.47427 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- OVERHEAD -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Overhead/overhead.xml</path>
+    <offsets>
+      <x-m> 0.48876 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 0.42971 </z-m>
+      <pitch-deg> 81.71 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- ASI -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.436 </y-m>
+      <z-m> -0.032 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m>  0.368 </y-m>
+      <z-m> -0.077 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- AI -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.341 </y-m>
+      <z-m> -0.032 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.269 </y-m>
+      <z-m> -0.077 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- ALT -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m>  0.001 </x-m>
+      <y-m> -0.245 </y-m>
+      <z-m> -0.032 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m>  0.001 </x-m>
+      <y-m>  0.377 </y-m>
+      <z-m> -0.203 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KI204 -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/KI204/KI204.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.146 </y-m>
+      <z-m> -0.032 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- TURN -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m> -0.002 </x-m>
+      <y-m> -0.436 </y-m>
+      <z-m> -0.128 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KI227 -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/kr87-adf/ki227.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m> -0.341 </y-m>
+      <z-m> -0.128 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/kr87-adf/kr87.xml</path>
+    <offsets>
+      <x-m> -0.002 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.114 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- VSI -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m> -0.003 </x-m>
+      <y-m> -0.245 </y-m>
+      <z-m> -0.128 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- HI -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/hi/hi.xml</path>
+    <offsets>
+      <x-m>  0.001 </x-m>
+      <y-m> -0.146 </y-m>
+      <z-m> -0.128 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- CHRONOMETER -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/chrono/chronometer.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m>  0.456 </y-m>
+      <z-m> -0.076 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- OILP -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/engines/oil/oilp.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.129 </y-m>
+      <z-m> 0.041 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- FLOW -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/engines/fflow/fflow.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.195 </y-m>
+      <z-m> 0.041 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- TACH -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/engines/tach/tach.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.129 </y-m>
+      <z-m> -0.031 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- TORQUE -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/engines/torq/torque.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m>  0.195 </y-m>
+      <z-m> -0.031 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- CARB TEMPERATURE -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/carbtemp/carbtemp1.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.129 </y-m>
+      <z-m> -0.100 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/carbtemp/carbtemp2.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.195 </y-m>
+      <z-m> -0.100 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- FUEL PRESSURE -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/engines/fuelp/fuelp1.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.357 </y-m>
+      <z-m> 0.020 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/engines/fuelp/fuelp2.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.430 </y-m>
+      <z-m> 0.020 </z-m>
+    </offsets>
+  </model>
+ 
+  <!-- MANIFOLD -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/engines/man/man.xml</path>
+    <offsets>
+      <x-m> -0.002 </x-m>
+      <y-m>  0.274 </y-m>
+      <z-m>  0.018 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- GEAR -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/gear/gear.xml</path>
+    <offsets>
+      <x-m>  0.00618 </x-m>
+      <y-m> -0.14775 </y-m>
+      <z-m> -0.26799 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- FLAPS -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/flaps/flaps.xml</path>
+    <offsets>
+      <x-m>  0.013 </x-m>
+      <y-m>  0.162 </y-m>
+      <z-m> -0.283 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- PLAQUE -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/plaques/plaque.xml</path>
+    <offsets>
+      <x-m> -0.0049 </x-m>
+      <y-m>  0.0000 </y-m>
+      <z-m> -0.1819 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- LIGHT PANEL -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/lights/lightpanel.xml</path>
+    <offsets>
+      <x-m> -0.00036 </x-m>
+      <y-m> -0.38338 </y-m>
+      <z-m> -0.21477 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- BATTERY -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/battery.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m> -0.346 </y-m>
+      <z-m> -0.290 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- ALTERNATOR -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/alternator.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m> -0.316 </y-m>
+      <z-m> -0.290 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- OTHER -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/other-lights.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m> -0.266 </y-m>
+      <z-m> -0.290 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/other-lights.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m> -0.236 </y-m>
+      <z-m> -0.290 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/other-lights.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m> -0.206 </y-m>
+      <z-m> -0.290 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- INSTR LIGHT -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/instr-lights.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m>  0.210 </y-m>
+      <z-m> -0.290 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- LANDING LIGHT -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/landing-lights.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m>  0.240 </y-m>
+      <z-m> -0.290 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- NAV LIGHT -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/nav-lights.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m>  0.270 </y-m>
+      <z-m> -0.290 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- TAXI LIGHT -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/taxi-lights.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m>  0.300 </y-m>
+      <z-m> -0.290 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- OTHER LIGHT -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/other-lights.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m>  0.330 </y-m>
+      <z-m> -0.290 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- OTHER LIGHT -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/other-lights.xml</path>
+    <offsets>
+      <x-m>  0.031 </x-m>
+      <y-m> -0.045 </y-m>
+      <z-m> -0.320 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/other-lights.xml</path>
+    <offsets>
+      <x-m>  0.031 </x-m>
+      <y-m> -0.015 </y-m>
+      <z-m> -0.320 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/other-lights.xml</path>
+    <offsets>
+      <x-m>  0.031 </x-m>
+      <y-m>  0.015 </y-m>
+      <z-m> -0.320 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/switch/other-lights.xml</path>
+    <offsets>
+      <x-m>  0.031 </x-m>
+      <y-m>  0.045 </y-m>
+      <z-m> -0.320 </z-m>
+      <pitch-deg> -21 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- YOKES -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/yokes/all-yokes.xml</path>
+  </model>
+  
+  <!-- KAP140 -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/kap140/KAP140TwoAxisAlt.xml</path>
+    <offsets>
+      <x-m> -0.006 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.111 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KNS80 -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/kns80/kns80.xml</path>
+    <offsets>
+      <x-m> -0.005 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.051 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KX165 -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/kx165/kx165-1.xml</path>
+    <offsets>
+      <x-m> -0.016 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.014 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Kt70 -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/kt70/kt70.xml</path>
+    <offsets>
+      <x-m> -0.007 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.061 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- WARNING -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/warning/warning.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m> -0.343 </y-m>
+      <z-m>  0.042 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- MAG COMPASS -->
+  <model>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/mag-compass/mag-compass.xml</path>
+    <offsets>
+      <x-m> -0.164 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.177 </z-m>
+    </offsets>
+  </model>
+  
+</PropertyList>
