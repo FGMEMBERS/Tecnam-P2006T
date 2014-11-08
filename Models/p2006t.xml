@@ -451,12 +451,12 @@
     <property>surface-positions/flap-pos-norm</property>
     <factor> 40 </factor>
     <axis>
-      <x1-m> -0.22425 </x1-m>
-      <y1-m> -3.19415 </y1-m>
-      <z1-m>  0.25002 </z1-m>
-      <x2-m> -0.22425 </x2-m>
-      <y2-m> -0.47371 </y2-m>
-      <z2-m>  0.21287 </z2-m>
+      <x1-m> -0.18978 </x1-m>
+      <y1-m> -3.18910 </y1-m>
+      <z1-m>  0.20302 </z1-m>
+      <x2-m> -0.18978 </x2-m>
+      <y2-m> -0.57164 </y2-m>
+      <z2-m>  0.16739 </z2-m>
     </axis>
   </animation>
 
@@ -466,12 +466,12 @@
     <property>surface-positions/flap-pos-norm</property>
     <factor> 40 </factor>
     <axis>
-      <x1-m> -0.22425 </x1-m>
-      <y1-m>  0.47371 </y1-m>
-      <z1-m>  0.21287 </z1-m>
-      <x2-m> -0.22425 </x2-m>
-      <y2-m>  3.19415 </y2-m>
-      <z2-m>  0.25002 </z2-m>
+      <x1-m> -0.18978 </x1-m>
+      <y1-m>  0.57164 </y1-m>
+      <z1-m>  0.16739 </z1-m>
+      <x2-m> -0.18978 </x2-m>
+      <y2-m>  3.18910 </y2-m>
+      <z2-m>  0.20302 </z2-m>
     </axis>
   </animation>
 
