@@ -36,15 +36,6 @@
     <path>Aircraft/Tecnam-P2006T/Models/Interior/Seats/seat.xml</path>
     <offsets>
       <x-m> -0.92 </x-m>
-      <y-m>  0.00 </y-m>
-      <z-m> -0.39 </z-m>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Tecnam-P2006T/Models/Interior/Seats/seat.xml</path>
-    <offsets>
-      <x-m> -0.92 </x-m>
       <y-m>  0.29 </y-m>
       <z-m> -0.39 </z-m>
     </offsets>
