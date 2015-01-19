@@ -482,7 +482,7 @@
   
   <!-- KX165 -->
   <model>
-    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/kx165/kx165-1.xml</path>
+    <path>Aircraft/Tecnam-P2006T/Models/Interior/Panel/Instruments/kx165/kx165.xml</path>
     <offsets>
       <x-m> -0.016 </x-m>
       <y-m>  0.000 </y-m>
