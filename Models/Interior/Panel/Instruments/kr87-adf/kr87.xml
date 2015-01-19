@@ -66,28 +66,6 @@
 
   <animation>
     <type>material</type>
-    <object-name>ant.annun</object-name>
-    <object-name>adf.annun</object-name>
-    <object-name>bfo.annun</object-name>
-    <object-name>frq.annun</object-name>
-    <object-name>flt.annun</object-name>
-    <object-name>et.annun</object-name>
-    <object-name>in-use-leds</object-name>
-    <object-name>standby-leds</object-name>
-    <condition>
-      <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
-    </condition>
-    <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
-      <red>   2 </red>
-      <green> 2 </green>
-      <blue>  2 </blue>
-    </emission>
-  </animation>
-  
-  <animation>
-    <type>material</type>
     <object-name>stby</object-name>
     <object-name>KR87.adf</object-name>
     <object-name>KR87.bfo</object-name>
@@ -111,17 +89,43 @@
   </animation>
 
   <animation>
+    <type>material</type>
+    <object-name>ant.annun</object-name>
+    <object-name>adf.annun</object-name>
+    <object-name>bfo.annun</object-name>
+    <object-name>frq.annun</object-name>
+    <object-name>flt.annun</object-name>
+    <object-name>et.annun</object-name>
+    <object-name>in-use-leds</object-name>
+    <object-name>standby-leds</object-name>
+    <condition>
+      <property>controls/lighting/instrument-lights</property>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+
+  <animation>
     <type>select</type>
     <object-name>in-use-leds</object-name>
     <object-name>standby-leds</object-name>
     <condition>
+      <!--
       <and>
+      -->
         <property>instrumentation/kr-87/inputs/power-btn</property>
+      <!--
         <greater-than>
           <property>systems/electrical/outputs/adf</property>
           <value>1</value>
         </greater-than>
       </and>
+      -->
     </condition>
   </animation>
 
@@ -131,10 +135,12 @@
     <condition>
       <and>
         <property>instrumentation/kr-87/inputs/power-btn</property>
+      <!--
         <greater-than>
           <property>systems/electrical/outputs/adf</property>
           <value>1</value>
         </greater-than>
+      -->
         <greater-than>
           <property>instrumentation/kr-87/outputs/selected-khz</property>
           <value>999</value>
@@ -149,20 +155,24 @@
     <condition>
       <and>
         <property>instrumentation/kr-87/inputs/power-btn</property>
+        <!--
         <or>
           <greater-than>
             <property>instrumentation/kr-87/outputs/standby-khz</property>
             <value>999</value>
           </greater-than>
+        -->
           <equals>
             <property>instrumentation/kr-87/modes/stby</property>
             <value>1</value>
           </equals>
+        <!--
         </or>
         <greater-than>
           <property>systems/electrical/outputs/adf</property>
           <value>1</value>
         </greater-than>
+        -->
       </and>
     </condition>
   </animation>
@@ -177,14 +187,148 @@
           <property>instrumentation/kr-87/modes/stby</property>
           <value>0</value>
         </greater-than>
+        <!--
         <greater-than>
           <property>systems/electrical/outputs/adf</property>
           <value>1</value>
         </greater-than>
+        -->
       </and>
     </condition>
   </animation>
 
+  <animation>
+    <type>pick</type>
+    <object-name>KR87.volume</object-name>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <condition>
+          <greater-than>
+            <property>instrumentation/kr-87/inputs/volume</property>
+            <value>0.0</value>
+          </greater-than>
+        </condition>
+        <command>property-adjust</command>
+        <property>instrumentation/kr-87/inputs/volume</property>
+        <step>-0.05</step>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <condition>
+          <equals>
+            <property>instrumentation/kr-87/inputs/volume</property>
+            <value>0</value>
+          </equals>
+        </condition>
+        <command>property-assign</command>
+        <property>instrumentation/kr-87/inputs/power-btn</property>
+        <value>0</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>KR87.volume</object-name>
+    <action>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <condition>
+          <greater-than>
+            <property>instrumentation/kr-87/inputs/volume</property>
+            <value>0.0</value>
+          </greater-than>
+        </condition>
+        <command>property-adjust</command>
+        <property>instrumentation/kr-87/inputs/volume</property>
+        <step>-0.05</step>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <condition>
+          <equals>
+            <property>instrumentation/kr-87/inputs/volume</property>
+            <value>0</value>
+          </equals>
+        </condition>
+        <command>property-assign</command>
+        <property>instrumentation/kr-87/inputs/power-btn</property>
+        <value>0</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>KR87.volume</object-name>
+    <action>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <condition>
+          <property>instrumentation/kr-87/inputs/power-btn</property>
+        </condition>
+        <command>property-adjust</command>
+        <property>instrumentation/kr-87/inputs/volume</property>
+        <step>0.05</step>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <condition>
+          <not>
+            <property>instrumentation/kr-87/inputs/power-btn</property>
+          </not>
+        </condition>
+        <command>property-assign</command>
+        <property>instrumentation/kr-87/inputs/power-btn</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>KR87.volume</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <condition>
+          <property>instrumentation/kr-87/inputs/power-btn</property>
+        </condition>
+        <command>property-adjust</command>
+        <property>instrumentation/kr-87/inputs/volume</property>
+        <step>0.05</step>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <condition>
+          <not>
+            <property>instrumentation/kr-87/inputs/power-btn</property>
+          </not>
+        </condition>
+        <command>property-assign</command>
+        <property>instrumentation/kr-87/inputs/power-btn</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+  
   <animation>
     <type>rotate</type>
     <object-name>KR87.volume</object-name>
@@ -374,274 +518,6 @@
   <!-- OSG Hotspots -->
   <animation>
     <type>pick</type>
-    <object-name>KR87.knob1</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.1</interval-sec>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/outputs/standby-khz</property>
-        <step>1</step>
-        <min>100</min>
-        <max>1300</max>
-        <wrap>true</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.knob1</object-name>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.1</interval-sec>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/outputs/standby-khz</property>
-        <step>-1</step>
-        <min>100</min>
-        <max>1300</max>
-        <wrap>true</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.knob1</object-name>
-    <action>
-      <button>3</button>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/outputs/standby-khz</property>
-        <step>1</step>
-        <min>100</min>
-        <max>1300</max>
-        <wrap>true</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.knob1</object-name>
-    <action>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/outputs/standby-khz</property>
-        <step>-1</step>
-        <min>100</min>
-        <max>1300</max>
-        <wrap>true</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.knob</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.1</interval-sec>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/outputs/standby-khz</property>
-        <step>100</step>
-        <min>100</min>
-        <max>1300</max>
-        <wrap>true</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.knob</object-name>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.1</interval-sec>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/outputs/standby-khz</property>
-        <step>-100</step>
-        <min>100</min>
-        <max>1300</max>
-        <wrap>true</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.knob</object-name>
-    <action>
-      <button>3</button>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/outputs/standby-khz</property>
-        <step>100</step>
-        <min>100</min>
-        <max>1300</max>
-        <wrap>true</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.knob</object-name>
-    <action>
-      <button>4</button>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/outputs/standby-khz</property>
-        <step>-100</step>
-        <min>100</min>
-        <max>1300</max>
-        <wrap>true</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.volume</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.1</interval-sec>
-      <binding>
-        <condition>
-          <property>instrumentation/kr-87/inputs/power-btn</property>
-        </condition>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/inputs/volume</property>
-        <step>0.05</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <condition>
-          <not>
-            <property>instrumentation/kr-87/inputs/power-btn</property>
-          </not>
-        </condition>
-        <command>property-assign</command>
-        <property>instrumentation/kr-87/inputs/power-btn</property>
-        <value>1</value>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.volume</object-name>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.1</interval-sec>
-      <binding>
-        <condition>
-          <greater-than>
-            <property>instrumentation/kr-87/inputs/volume</property>
-            <value>0.0</value>
-          </greater-than>
-        </condition>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/inputs/volume</property>
-        <step>-0.05</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <condition>
-          <equals>
-            <property>instrumentation/kr-87/inputs/volume</property>
-            <value>0</value>
-          </equals>
-        </condition>
-        <command>property-assign</command>
-        <property>instrumentation/kr-87/inputs/power-btn</property>
-        <value>0</value>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.volume</object-name>
-    <action>
-      <button>3</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.1</interval-sec>
-      <binding>
-        <condition>
-          <property>instrumentation/kr-87/inputs/power-btn</property>
-        </condition>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/inputs/volume</property>
-        <step>0.05</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <condition>
-          <not>
-            <property>instrumentation/kr-87/inputs/power-btn</property>
-          </not>
-        </condition>
-        <command>property-assign</command>
-        <property>instrumentation/kr-87/inputs/power-btn</property>
-        <value>1</value>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KR87.volume</object-name>
-    <action>
-      <button>4</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.1</interval-sec>
-      <binding>
-        <condition>
-          <greater-than>
-            <property>instrumentation/kr-87/inputs/volume</property>
-            <value>0.0</value>
-          </greater-than>
-        </condition>
-        <command>property-adjust</command>
-        <property>instrumentation/kr-87/inputs/volume</property>
-        <step>-0.05</step>
-        <min>0.0</min>
-        <max>1.0</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <condition>
-          <equals>
-            <property>instrumentation/kr-87/inputs/volume</property>
-            <value>0</value>
-          </equals>
-        </condition>
-        <command>property-assign</command>
-        <property>instrumentation/kr-87/inputs/power-btn</property>
-        <value>0</value>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
     <object-name>KR87.adf</object-name>
     <action>
       <button>0</button>
@@ -652,7 +528,19 @@
       </binding>
     </action>
   </animation>
-
+  
+  <animation>
+    <type>translate</type>
+    <object-name>KR87.adf</object-name>
+    <property>instrumentation/kr-87/inputs/adf-btn</property>
+    <factor> -0.0010 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
   <animation>
     <type>pick</type>
     <object-name>KR87.bfo</object-name>
@@ -665,7 +553,19 @@
       </binding>
     </action>
   </animation>
-
+  
+  <animation>
+    <type>translate</type>
+    <object-name>KR87.bfo</object-name>
+    <property>instrumentation/kr-87/inputs/bfo-btn</property>
+    <factor> -0.0010 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
   <animation>
     <type>pick</type>
     <object-name>KR87.frq</object-name>
@@ -673,20 +573,24 @@
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
-        <command>property-assign</command>
+        <command>property-toggle</command>
         <property>instrumentation/kr-87/inputs/frq-btn</property>
-        <value>1</value>
       </binding>
-      <mod-up>
-        <binding>
-          <command>property-assign</command>
-          <property>instrumentation/kr-87/inputs/frq-btn</property>
-          <value>0</value>
-        </binding>
-      </mod-up>
     </action>
   </animation>
-
+  
+  <animation>
+    <type>translate</type>
+    <object-name>KR87.frq</object-name>
+    <property>instrumentation/kr-87/inputs/frq-btn</property>
+    <factor> -0.0010 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
   <animation>
     <type>pick</type>
     <object-name>KR87.flt</object-name>
@@ -694,20 +598,24 @@
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
-        <command>property-assign</command>
+        <command>property-toggle</command>
         <property>instrumentation/kr-87/inputs/flt-et-btn</property>
-        <value>1</value>
       </binding>
-      <mod-up>
-        <binding>
-          <command>property-assign</command>
-          <property>instrumentation/kr-87/inputs/flt-et-btn</property>
-          <value>0</value>
-        </binding>
-      </mod-up>
     </action>
   </animation>
-
+  
+  <animation>
+    <type>translate</type>
+    <object-name>KR87.flt</object-name>
+    <property>instrumentation/kr-87/inputs/flt-et-btn</property>
+    <factor> -0.0010 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
   <animation>
     <type>pick</type>
     <object-name>KR87.set</object-name>
@@ -715,18 +623,72 @@
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
-        <command>property-assign</command>
+        <command>property-toggle</command>
         <property>instrumentation/kr-87/inputs/set-rst-btn</property>
-        <value>1</value>
       </binding>
-      <mod-up>
-        <binding>
-          <command>property-assign</command>
-          <property>instrumentation/kr-87/inputs/set-rst-btn</property>
-          <value>0</value>
-        </binding>
-      </mod-up>
     </action>
   </animation>
-
+  
+  <animation>
+    <type>translate</type>
+    <object-name>KR87.set</object-name>
+    <property>instrumentation/kr-87/inputs/set-rst-btn</property>
+    <factor> -0.0010 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>knob</type>
+    <object-name>KR87.knob1</object-name>
+    <property>instrumentation/transponder/inputs/digit[3]</property>
+    <factor> 5 </factor>
+    <center>
+      <x-m>  0.00000 </x-m>
+      <y-m>  0.06310 </y-m>
+      <z-m> -0.00015 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/kr-87/outputs/standby-khz</property>
+        <min>100</min>
+        <max>1300</max>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>knob</type>
+    <object-name>KR87.knob</object-name>
+    <property>instrumentation/kr-87/outputs/standby-khz</property>
+    <factor> 5 </factor>
+    <center>
+      <x-m>  0.00000 </x-m>
+      <y-m>  0.06310 </y-m>
+      <z-m> -0.00015 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/kr-87/outputs/standby-khz</property>
+        <min>100</min>
+        <max>1300</max>
+      </binding>
+    </action>
+  </animation>
+  
 </PropertyList>

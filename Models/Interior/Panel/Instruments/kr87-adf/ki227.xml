@@ -46,6 +46,7 @@
     <type>rotate</type>
     <object-name>KI227.card</object-name>
     <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+    <!-- <property>/instrumentation/kr-87/inputs/rotation-deg</property> -->
     <factor> -1 </factor>
     <axis>
       <x> -1 </x>

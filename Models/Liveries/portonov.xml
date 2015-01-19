@@ -6,8 +6,8 @@
     
     <model>
       <livery>
-        <name type="string">Default</name>
-        <texture>texture.png</texture>
+        <name type="string">Porto Nove</name>
+        <texture>Liveries/2048x2048/portonovo.png</texture>
         <specular>
           <red>   0.2 </red>
           <green> 0.2 </green>
